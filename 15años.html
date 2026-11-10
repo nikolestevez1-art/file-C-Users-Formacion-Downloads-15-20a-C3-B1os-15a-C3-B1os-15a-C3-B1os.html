@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F50076">
+
+    <title>Mis XV años | Sharit Dayana</title>
+
+    <link rel="stylesheet" href="../style/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- CONTROL DE LAS SEIS PÁGINAS -->
+
+    <input type="radio" name="pagina" id="p1" checked>
+    <input type="radio" name="pagina" id="p2">
+    <input type="radio" name="pagina" id="p3">
+    <input type="radio" name="pagina" id="p4">
+    <input type="radio" name="pagina" id="p5">
+    <input type="radio" name="pagina" id="p6">
+
+
+    <main class="libro">
+
+
+        <!-- REPRODUCTOR DE MÚSICA -->
+
+        <div class="reproductor">
+
+            <div class="musica-info">
+
+                <span>♫</span>
+
+                <div>
+                    <strong>Tiempo de Vals</strong>
+                    <small>Chayanne</small>
+                </div>
+
+            </div>
+
+            <audio controls loop preload="metadata">
+                <source src="../audio/tiempo-de-vals.mp3" type="audio/mpeg">
+                Tu navegador no soporta audio.
+            </audio>
+
+        </div>
+
+
+        <!-- PÁGINA 1: INICIO -->
+
+        <section class="pagina pagina1">
+
+            <p class="subtitulo">UNA NOCHE MÁGICA</p>
+
+            <div class="foto-marco">
+
+                <img src="../imagen/sharit.png"
+                     class="foto-portada"
+                     alt="Sharit Dayana">
+
+            </div>
+
+            <h1>Sharit Dayana</h1>
+
+            <h2 class="titulo-xv">Mis XV años</h2>
+
+            <p class="mensaje">
+                Una noche, un sueño y mil recuerdos
+                que quedarán para siempre en mi corazón.
+            </p>
+
+            <p class="instruccion">
+                Descubre cada detalle de mi invitación
+            </p>
+
+            <div class="navegacion">
+
+                <span class="numero">01 / 06</span>
+
+                <label for="p2" class="flecha">❯</label>
+
+            </div>
+
+        </section>
+
+
+        <!-- PÁGINA 2: INVITACIÓN -->
+
+        <section class="pagina pagina2">
+
+            <p class="etiqueta">CON MUCHO CARIÑO</p>
+
+            <h2 class="titulo-seccion">Mi invitación</h2>
+
+            <div class="carta">
+
+                <p>
+                    Hay momentos inolvidables que se guardan
+                    para siempre en el corazón.
+                </p>
+
+                <p>
+                    Hoy comienza una nueva etapa de mi vida
+                    y quiero compartir contigo esta noche tan especial.
+                </p>
+
+                <p>
+                    Quiero que seas parte de esta celebración
+                    llena de alegría, amor y felicidad.
+                </p>
+
+                <h3>¡Te espero!</h3>
+
+            </div>
+
+            <div class="navegacion">
+
+                <label for="p1" class="flecha">❮</label>
+
+                <span class="numero">02 / 06</span>
+
+                <label for="p3" class="flecha">❯</label>
+
+            </div>
+
+        </section>
+
+
+        <!-- PÁGINA 3: GALERÍA -->
+
+        <section class="pagina pagina3">
+
+            <h2 class="titulo-seccion">Mis recuerdos</h2>
+
+            <p class="etiqueta">MOMENTOS ESPECIALES</p>
+
+            <img src="../imagen/linea.png"
+                 class="linea"
+                 alt="">
+
+            <div class="foto-galeria foto-grande">
+
+                <img src="../imagen/sharit.png"
+                     alt="Fotografía de Sharit Dayana">
+
+            </div>
+
+            <div class="fotos-secundarias">
+
+                <div class="foto-galeria">
+
+                    <img src="../imagen/sharit2.png"
+                         alt="Fotografía de Sharit">
+
+                </div>
+
+                <div class="foto-galeria">
+
+                    <img src="../imagen/sharit3.png"
+                         alt="Fotografía de Sharit">
+
+                </div>
+
+            </div>
+
+            <p class="mensaje">
+                Cada fotografía guarda una historia.
+            </p>
+
+            <div class="navegacion">
+
+                <label for="p2" class="flecha">❮</label>
+
+                <span class="numero">03 / 06</span>
+
+                <label for="p4" class="flecha">❯</label>
+
+            </div>
+
+        </section>
+
+
+        <!-- PÁGINA 4: CELEBRACIÓN -->
+
+        <section class="pagina pagina4">
+
+            <h2 class="titulo-seccion">La celebración</h2>
+
+            <p class="etiqueta">RESERVA ESTA FECHA</p>
+
+            <img src="../imagen/linea.png"
+                 class="linea"
+                 alt="">
+
+
+            <!-- CUENTA REGRESIVA -->
+
+            <div class="cuenta-regresiva" id="cuenta-regresiva">
+
+                <p class="cuenta-etiqueta">
+                    FALTA MUY POCO PARA MI GRAN DÍA
+                </p>
+
+                <h3>La cuenta regresiva</h3>
+
+                <p class="cuenta-mensaje">
+                    Cada instante nos acerca a una noche mágica.
+                </p>
+
+                <div class="contador">
+
+                    <div class="contador-caja">
+                        <span id="dias">00</span>
+                        <small>DÍAS</small>
+                    </div>
+
+                    <div class="contador-caja">
+                        <span id="horas">00</span>
+                        <small>HORAS</small>
+                    </div>
+
+                    <div class="contador-caja">
+                        <span id="minutos">00</span>
+                        <small>MINUTOS</small>
+                    </div>
+
+                    <div class="contador-caja">
+                        <span id="segundos">00</span>
+                        <small>SEGUNDOS</small>
+                    </div>
+
+                </div>
+
+                <p class="mensaje-final" id="mensaje-final">
+                    ¡Mi noche soñada se acerca!
+                </p>
+
+            </div>
+
+
+            <!-- FECHA -->
+
+            <div class="fecha-caja">
+
+                <p>JUEVES</p>
+
+                <strong>04</strong>
+
+                <h3>FEBRERO</h3>
+
+                <h4>2027</h4>
+
+            </div>
+
+
+            <!-- HORA -->
+
+            <div class="dato">
+
+                <span>◷</span>
+
+                <h3>Hora de inicio</h3>
+
+                <p>6:00 P. M.</p>
+
+            </div>
+
+
+            <!-- UBICACIÓN -->
+
+            <div class="dato">
+
+                <span>⌖</span>
+
+                <h3>Ubicación</h3>
+
+                <p>Salón de eventos</p>
+
+                <small>Dirección por confirmar</small>
+
+            </div>
+
+            <a href="https://www.google.com/maps"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="boton">
+
+                VER UBICACIÓN
+
+            </a>
+
+            <div class="navegacion">
+
+                <label for="p3" class="flecha">❮</label>
+
+                <span class="numero">04 / 06</span>
+
+                <label for="p5" class="flecha">❯</label>
+
+            </div>
+
+        </section>
+
+
+        <!-- PÁGINA 5: CONFIRMAR ASISTENCIA -->
+
+        <section class="pagina pagina5">
+            
+            <img src="../imagen/linea.png"
+                 class="linea"
+                 alt="">
+
+            <h2 class="titulo-seccion">¿Me acompañas?</h2>
+
+            <p class="mensaje">
+                Tu presencia hará que esta noche sea aún
+                más especial e inolvidable.
+            </p>
+
+            <h3 class="confirmar-titulo">
+                ¡Confirma tu asistencia!
+            </h3>
+
+            <p class="mensaje">
+                Será un placer contar contigo en este día
+                tan importante.
+            </p>
+
+            <a href="https://wa.me/573003499447?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20los%2015%20a%C3%B1os%20de%20Sharit%20Dayana."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="boton whatsapp">
+
+                ♡ CONFIRMAR POR WHATSAPP
+
+            </a>
+
+            <p class="telefono">300 349 9447</p>
+
+            <div class="navegacion">
+
+                <label for="p4" class="flecha">❮</label>
+
+                <span class="numero">05 / 06</span>
+
+                <label for="p6" class="flecha">❯</label>
+
+            </div>
+
+        </section>
+
+
+        <!-- PÁGINA 6: DESPEDIDA -->
+
+        <section class="pagina pagina6">
+
+            <img src="../imagen/corona.png"
+                 class="corona"
+                 alt="">
+
+            <h1>Sharit Dayana</h1>
+
+            <h2 class="titulo-xv">Mis XV años</h2>
+
+            <img src="../imagen/linea.png"
+                 class="linea"
+                 alt="">
+
+            <p class="despedida-texto">
+                ¡Gracias por ser parte de mi historia!
+            </p>
+
+            <p class="mensaje">
+                Espero compartir contigo una noche inolvidable.
+            </p>
+
+            <div class="navegacion">
+
+                <label for="p5" class="flecha">❮</label>
+
+                <span class="numero">06 / 06</span>
+
+                <!-- ESTA FLECHA REGRESA A LA PRIMERA PÁGINA -->
+
+                <label for="p1"
+                       class="flecha"
+                       title="Volver al inicio"
+                       aria-label="Volver al inicio">↻</label>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- JAVASCRIPT: CUENTA REGRESIVA -->
+
+    <script>
+
+        // Fecha del evento: 4 de febrero de 2027 a las 6:00 p. m.
+
+        const fechaEvento = new Date(2027, 1, 4, 18, 0, 0);
+
+        function actualizarCuentaRegresiva() {
+
+            const ahora = new Date();
+
+            const diferencia = fechaEvento - ahora;
+
+            if (diferencia <= 0) {
+
+                document.getElementById("dias").textContent = "00";
+                document.getElementById("horas").textContent = "00";
+                document.getElementById("minutos").textContent = "00";
+                document.getElementById("segundos").textContent = "00";
+
+                document.getElementById("mensaje-final").textContent =
+                    "¡Hoy es mi gran día!";
+
+                return;
+            }
+
+            const dias = Math.floor(
+                diferencia / (1000 * 60 * 60 * 24)
+            );
+
+            const horas = Math.floor(
+                (diferencia / (1000 * 60 * 60)) % 24
+            );
+
+            const minutos = Math.floor(
+                (diferencia / (1000 * 60)) % 60
+            );
+
+            const segundos = Math.floor(
+                (diferencia / 1000) % 60
+            );
+
+            document.getElementById("dias").textContent =
+                String(dias).padStart(2, "0");
+
+            document.getElementById("horas").textContent =
+                String(horas).padStart(2, "0");
+
+            document.getElementById("minutos").textContent =
+                String(minutos).padStart(2, "0");
+
+            document.getElementById("segundos").textContent =
+                String(segundos).padStart(2, "0");
+
+        }
+
+        actualizarCuentaRegresiva();
+
+        setInterval(actualizarCuentaRegresiva, 1000);
+
+    </script>
+
+</body>
+</html>

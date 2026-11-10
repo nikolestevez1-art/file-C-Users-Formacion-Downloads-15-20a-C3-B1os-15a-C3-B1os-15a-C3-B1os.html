@@ -1,0 +1,647 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: #F50076;
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    overflow-x: hidden;
+}
+
+/* CONTROLES DE PÁGINAS */
+
+input[name="pagina"] {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* LIBRO */
+
+.libro {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    height: min(850px, calc(100dvh - 30px));
+    min-height: 620px;
+    background: #FFE4EF;
+    border: 6px double #D4A044;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px #62002F77;
+}
+
+/* MÚSICA */
+
+.reproductor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 30;
+    height: 66px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 12px;
+    background: linear-gradient(135deg, #A90050, #F50076);
+    border-bottom: 3px solid #D4A044;
+}
+
+.musica-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+}
+
+.musica-info > span {
+    color: #FFD77A;
+    font-size: 30px;
+}
+
+.musica-info div {
+    display: flex;
+    flex-direction: column;
+}
+
+.musica-info strong {
+    font-size: 11px;
+}
+
+.musica-info small {
+    color: #FFE2A6;
+    font-size: 10px;
+}
+
+.reproductor audio {
+    width: 170px;
+    height: 36px;
+}
+
+/* PÁGINAS */
+
+.pagina {
+    position: absolute;
+    inset: 66px 0 0;
+    width: 100%;
+    height: calc(100% - 66px);
+    padding: 35px 24px 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(35px);
+
+    transition: opacity .45s ease,
+                transform .45s ease,
+                visibility .45s;
+}
+
+/* CAMBIO DE PÁGINA */
+
+#p1:checked ~ .libro .pagina1,
+#p2:checked ~ .libro .pagina2,
+#p3:checked ~ .libro .pagina3,
+#p4:checked ~ .libro .pagina4,
+#p5:checked ~ .libro .pagina5,
+#p6:checked ~ .libro .pagina6 {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+/* FONDOS */
+
+.pagina1,
+.pagina6 {
+    background: linear-gradient(145deg, #F50076, #A90050, #F50076);
+    color: white;
+}
+
+.pagina2,
+.pagina4 {
+    background: linear-gradient(145deg, #c2175b, #FFB6D5);
+    color: #79003D;
+}
+
+.pagina3 {
+    background: linear-gradient(145deg, #FFB6D5, #aa2a55, #FFB6D5);
+    color: #79003D;
+}
+
+.pagina5 {
+    background: linear-gradient(145deg, #F50076, #C90060, #FF69B4);
+    color: white;
+}
+
+/* CORONAS */
+
+.corona {
+    width: 145px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 6px 10px #79003D66);
+}
+
+.corona-pequena {
+    width: 105px;
+    height: 85px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+/* PORTADA */
+
+.subtitulo,
+.etiqueta {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #FFE2A6;
+    margin: 10px 0;
+}
+
+.foto-marco {
+    width: 78%;
+    max-width: 285px;
+    padding: 10px;
+    margin: 15px auto 20px;
+    background: linear-gradient(135deg, #FFF0C9, #D4A044, #FFF0C9);
+    border: 4px solid white;
+    border-radius: 160px 160px 25px 25px;
+    box-shadow: 0 0 0 4px #D4A044,
+                0 10px 25px #79003D77;
+}
+
+.foto-portada {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid white;
+    border-radius: 145px 145px 18px 18px;
+}
+
+.pagina1 h1,
+.pagina6 h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 49px;
+    color: #FFE2A6;
+    text-shadow: 2px 3px 7px #79003D;
+}
+
+.titulo-xv {
+    font-family: 'Great Vibes', cursive;
+    font-size: 39px;
+    color: #FFE2A6;
+    margin: 8px 0;
+}
+
+.mensaje {
+    max-width: 320px;
+    font-size: 15px;
+    line-height: 1.9;
+    margin: 13px auto;
+}
+
+.pagina1 .mensaje,
+.pagina6 .mensaje {
+    color: #FFF0F5;
+}
+
+.instruccion {
+    color: #FFE2A6;
+    font-size: 11px;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* TÍTULOS */
+
+.titulo-seccion {
+    font-family: 'Great Vibes', cursive;
+    font-size: 53px;
+    color: #A90050;
+    margin: 8px 0;
+}
+
+.pagina5 .titulo-seccion {
+    color: #FFE2A6;
+}
+
+.linea {
+    width: 210px;
+    max-width: 90%;
+    height: 45px;
+    object-fit: contain;
+    margin: 12px auto;
+}
+
+/* INVITACIÓN */
+
+.carta {
+    width: 100%;
+    padding: 25px 20px;
+    background: #ffe0f1;
+    border: 4px double #D4A044;
+    border-radius: 22px;
+    box-shadow: 0 8px 20px #79003D33;
+}
+
+.carta p {
+    font-size: 18px; 
+    line-height: 1.9;
+    margin: 12px auto;
+}
+
+.carta h2 {
+    font-family: cursive;
+    font-size: 38px;
+    color: #C90060;
+}
+
+.corazon {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    margin: 12px auto;
+}
+
+.mariposa {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin: 12px;
+}
+
+/* GALERÍA */
+
+.foto-galeria {
+    padding: 7px;
+    background: linear-gradient(135deg, #FFF0C9, #D4A044, #FFF0C9);
+    border: 3px solid white;
+    border-radius: 14px;
+    box-shadow: 0 8px 18px #79003D44;
+}
+
+.foto-galeria img {
+    display: block;
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid white;
+}
+
+.foto-grande {
+    width: 80%;
+    margin: 10px auto 14px;
+}
+
+.foto-grande img {
+    height: 285px;
+}
+
+.fotos-secundarias {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    width: 100%;
+}
+
+/* CUENTA REGRESIVA */
+
+.cuenta-regresiva {
+    width: 100%;
+    padding: 20px 12px;
+    margin: 12px auto 18px;
+    background: linear-gradient(145deg, #A90050, #F50076, #C90060);
+    border: 3px double #FFD77A;
+    border-radius: 22px;
+    box-shadow: 0 8px 22px #79003D55;
+    color: white;
+    text-align: center;
+}
+
+.cuenta-etiqueta {
+    color: #FFE2A6;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.cuenta-regresiva h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 34px;
+    color: #FFE2A6;
+    margin-bottom: 7px;
+}
+
+.cuenta-mensaje {
+    font-size: 10px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.contador {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+}
+
+.contador-caja {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    min-height: 68px;
+    padding: 8px 2px;
+    background: linear-gradient(145deg, #FFF0F5, #FFD1E5);
+    border: 2px solid #FFD77A;
+    border-radius: 12px;
+}
+
+.contador-caja span {
+    font-size: 25px;
+    font-weight: bold;
+    color: #A90050;
+}
+
+.contador-caja small {
+    color: #A90050;
+    font-size: 8px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.mensaje-final {
+    font-family: 'Great Vibes', cursive;
+    font-size: 24px;
+    color: #FFE2A6;
+    margin-top: 15px;
+}
+
+/* FECHA */
+
+.fecha-caja {
+    width: 90%;
+    padding: 20px;
+    margin: 12px auto;
+    background: linear-gradient(145deg, #F50076, #A90050);
+    border: 4px double #FFD77A;
+    border-radius: 22px;
+    color: white;
+    box-shadow: 0 10px 25px #79003D55;
+}
+
+.fecha-caja p {
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.fecha-caja strong {
+    display: block;
+    font-size: 85px;
+    line-height: 1.1;
+    color: #FFD77A;
+}
+
+.fecha-caja h3 {
+    font-size: 23px;
+    letter-spacing: 4px;
+}
+
+.fecha-caja h4 {
+    font-size: 25px;
+    margin-top: 7px;
+    color: #FFE2A6;
+}
+
+.dato {
+    width: 90%;
+    padding: 13px;
+    margin: 9px auto;
+    background: #FFF9F7;
+    border: 2px solid #D4A044;
+    border-radius: 17px;
+    color: #79003D;
+}
+
+.dato span {
+    display: block;
+    font-size: 25px;
+    color: #C90060;
+}
+
+.dato h3 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 27px;
+}
+
+.dato p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.dato small {
+    font-size: 11px;
+}
+
+/* BOTONES */
+
+.boton {
+    display: inline-block;
+    padding: 13px 20px;
+    margin: 12px auto;
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #A90050, #F50076);
+    border: 2px solid #FFD77A;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px #79003D55;
+    transition: .3s;
+}
+
+.boton:hover {
+    transform: scale(1.05);
+}
+
+.whatsapp {
+    background: #168A45;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.confirmar-titulo,
+.despedida-texto {
+    font-family: 'Great Vibes', cursive;
+    font-size: 37px;
+    color: #FFE2A6;
+    margin: 15px 0;
+}
+
+.telefono {
+    color: #FFE2A6;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+/* FLECHAS */
+
+.navegacion {
+    position: absolute;
+    bottom: 13px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 23px;
+    z-index: 20;
+}
+
+.flecha {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #FFE2A6, #D4A044);
+    color: #79003D;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px #79003D55;
+    transition: .3s;
+}
+
+.flecha:hover {
+    transform: scale(1.12);
+    background: #FFF0C9;
+}
+
+.numero {
+    color: #A90050;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.pagina1 .numero,
+.pagina5 .numero,
+.pagina6 .numero {
+    color: #FFE2A6;
+}
+
+/* DECORACIONES */
+
+.flor-superior {
+    width: 180px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+/* PÁGINA FINAL */
+
+.pagina6 {
+    min-height: 100%;
+}
+
+.pagina6 .despedida-texto {
+    font-size: 42px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 480px) {
+    body {
+        padding: 0;
+    }
+
+    .libro {
+        width: 100%;
+        height: 100dvh;
+        min-height: 600px;
+        border-radius: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .pagina {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .foto-portada {
+        height: min(36vh, 300px);
+    }
+
+    .foto-grande img {
+        height: min(33vh, 285px);
+    }
+
+    .titulo-seccion {
+        font-size: 47px;
+    }
+}
+
+@media (max-height: 700px) {
+    .pagina {
+        justify-content: flex-start;
+    }
+
+    .foto-portada {
+        height: 220px;
+    }
+
+    .foto-grande img {
+        height: 190px;
+    }
+
+    .corona {
+        height: 85px;
+    }
+
+    .foto-marco {
+        max-width: 220px;
+    }
+}
+
+/* VALORES DE LA CUENTA REGRESIVA */
+
+.contador-caja span {
+    display: block;
+    min-width: 100%;
+    font-variant-numeric: tabular-nums;
+}
